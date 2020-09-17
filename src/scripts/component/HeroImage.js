@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import $ from 'jquery';
 
 const listImages = [
     "/images/heros/hero-image_1.jpg",
@@ -12,14 +13,26 @@ class HeroImage extends Component {
 
         this.
         this.state = {
-            currentImage: ''
+            currentImagePos: 0
+            currentImage: '',
+            currentImageAlt: '',
+            currentTextDisplayed: '',
+            delay: 4000,
+            isEnded: false
         }
     }
+
+    componentDidMount() {
+
+    }
+
+    heroUpdate()
+
     render() {
         return (
-            <div className='container__hero'>
-                <img class='hero_img__faded' src={this.state}
-            </div>
+            <img class='hero_img__faded' src={this.state.currentImage} alt={this.state.currentImageAlt}></img>
         )
     }
 }
+
+export default HeroImage;
