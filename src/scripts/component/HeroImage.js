@@ -13,7 +13,7 @@ class HeroImage extends Component {
 
         this.
         this.state = {
-            currentImagePos: 0
+            currentImagePos: 0,
             currentImage: '',
             currentImageAlt: '',
             currentTextDisplayed: '',
