@@ -1,0 +1,54 @@
+
+
+$fontcolor_all_textlogo_1 = #000000
+$fontcolor_all_textlogo_2 = #d76700
+$fontfamily_all_text_logo = 'Quicksand', sans-serif
+$fontstyle_all_text_logo = bold
+$fontfamily_all_nav_item = 'Roboto', serif 
+// mobile css variables
+
+$fontsize_mobile_textlogo = 24pt
+$iconssize_mobile_menu = 44px
+$fontsize_mobile_nav_item = 13pt
+$fontstyle_mobile_nav_item = light
+
+// desktop size 
+
+$fontsize_desktop_textlogo = 44pt
+$iconssize_desktop_menu = 80px
+$fontsize_desktop_nav_item = 30pt
+$fontstyle_desktop_nav_item = regular
+
+
+header
+    position: sticky -webkit-sticky
+
+.container__logo 
+    display: inline
+
+.logo_brand
+    display: inline
+
+.logo_brand_title_1
+    font-family: $fontfamily_all_text_logo
+    font-style: $fontstyle_all_text_logo
+    color: $fontcolor_all_textlogo_1
+    font-size: $fontsize_desktop_textlogo
+
+
+.logo_brand_title_2
+    font-family: $fontfamily_all_text_logo
+    font-style: $fontstyle_all_text_logo
+    color: $fontcolor_all_textlogo_2
+    font-size: $fontsize_desktop_textlogo
+
+
+
+@media screen and(max-width: 600px)
+    .logo_brand_title_1 
+        font-size: $fontsize_mobile_textlogo
+    .logo_brand_title_2
+        font-size: $fontsize_mobile_textlogo
+
+    
+    
