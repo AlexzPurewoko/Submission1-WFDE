@@ -9,24 +9,21 @@
 </head>
 
 <body>
-
     <header>
+        <div class='wrapper'>
         <div class='container__logo'>
             <img id='menu' class='menu_header' src="/images/icons/hamburger-icon.svg" alt='menu'>
-            <img id='logo' src="/images/icons/restaurant-icon.svg" alt='Logo FavResto'>
+            <img id='logo' src="/images/icons/restaurant-icon.svg" alt='Logo FavResto' onclick="window.location.href='#'">
         </div>
         <div class='logo_brand'>
             <h1 class='logo_brand_title_1'>Fav</h1>
-            <h1 class='logo_brand_title_1'>Resto</h1>
+            <h1 class='logo_brand_title_2'>Resto</h1>
         </div>
-        <nav class='nav_drawer' id='nav'>
-            <ul class='nav_list'>
-                <li class='nav_item'>Home</li>
-                <li class='nav_item'>Favorite</li>
-                <li class='nav_item'>About Us</li>
-            </ul>
-        </nav>
+        <div class='nav-wrapper'></div>
+        </div>
     </header>
+
+    <div class='nav-wrapper' id='nav-slider'></div>
     <main>
         <section class='hero'>
             <div class='hero__image' id='image__hero_main'>
@@ -43,7 +40,7 @@
                 <h1>Let's Explore the Restaurant!</h1>
             </div>
 
-            <div class='content' id="list__restaurant">
+            <div class='content' id="list__restaurant">-->
                 <!-- Will be programmed in Javascript -->
             </div>
         </section>
