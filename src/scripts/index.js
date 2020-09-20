@@ -1,7 +1,15 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/sass/index.sass';
-import '../styles/sass/text.sass';
-import '../styles/main.css';
-import './component/header-nav'
+import $ from 'jquery'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import MainApplication from './application/MainApplication';
 
-console.log('Hello Coders! :)');
+console.log($('#root__application')[0])
+ReactDOM.render(
+    <React.StrictMode>
+        <MainApplication />
+    </React.StrictMode>,
+    document.querySelector('#root__application')
+)
+
