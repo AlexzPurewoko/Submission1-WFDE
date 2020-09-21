@@ -4,7 +4,7 @@ class Data {
     }
 
     get apiEndpoint() {
-        thow new Error('Not implemented! please implement apiEndpoint');
+        throw new Error('Not implemented! please implement apiEndpoint');
     }
 
     async getData(success, failed) {

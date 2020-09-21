@@ -5,6 +5,8 @@ import applyNav from '../modules/nav-module';
 import applySticky from '../modules/sticky-header';
 import applyRemoveSpaceAfterTranslate from '../modules/remove-translate-space';
 import MainComponent from '../component/MainComponent';
+import HeaderNavigation from '../subcomponent/header-nav';
+import FooterComponent from '../component/FooterComponent';
 
 class MainApplication extends Component {
 
@@ -20,6 +22,8 @@ class MainApplication extends Component {
         // remove space after translate title__main up
             applyRemoveSpaceAfterTranslate();
             applyNav();
+
+            $('main').css('padding-bottom', `${$('footer').height() + 10}px`)
         }, 100);
         
     }
@@ -29,8 +33,12 @@ class MainApplication extends Component {
         return (
             <div>
                 <HeaderComponent />
-                <div className='nav-wrapper' id='nav-slider'></div>
+                <div className='nav-wrapper' id='nav-slider'>
+                    <HeaderNavigation />
+                </div>
                 <MainComponent />
+
+                <FooterComponent />
             </div>
         )
     }

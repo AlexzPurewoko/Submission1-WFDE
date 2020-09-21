@@ -10,10 +10,31 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'scripts/[name]-[hash].app.js',
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all', 
+          enforce: true
+        }
+      }
+    }
+  },
+  
   module: {
     rules: [
       {
-        test:/\.(sa|sc|c)ss$/i,
+        test:/\.css$/i,
+        use : [
+          {
+            loader: MiniCssExtractPlugin.loader
+          }
+          , 'css-loader']
+      },
+      {
+        test:/\.(sa|sc)ss$/i,
         use : [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -21,15 +42,34 @@ module.exports = {
               publicPath: '/styles/'
             }
           }
-          , 'css-loader', 'sass-loader']
+          , 'css-loader', {
+            loader: 'sass-loader',
+            options: {
+              implementation: require('sass'),
+              webpackImporter: false,
+              sassOptions: {
+                includePaths: ['./node_modules']
+              }
+            }
+          }]
       },
+
+      {
+        test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
+        use: [{
+            loader: 'file-loader',
+            options: {
+                name: 'fonts/[name].[ext]',
+            }
+        }]
+      }
     ],
   },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[hash].style.css',
-      chunkFilename: '[id].css'
+      chunkFilename: '[name]-[hash].style.css'
     }),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/templates/index.html'),

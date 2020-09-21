@@ -1,4 +1,6 @@
 import 'regenerator-runtime'; /* for async await transpile */
+import 'material-icons';
+import 'material-icons/css/material-icons.min.css'
 import '../styles/sass/index.sass';
 import $ from 'jquery'
 import React from 'react';

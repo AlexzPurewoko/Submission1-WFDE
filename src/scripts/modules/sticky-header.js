@@ -7,9 +7,12 @@ const applySticky = _ => {
     
         if(window.pageYOffset > pos){
             header.addClass('sticky');
+            
         } else {
             header.removeClass('sticky')
         }
+
+        console.log('pos', pos)
     });
 }
 
